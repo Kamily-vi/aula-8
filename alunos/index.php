@@ -1,6 +1,7 @@
 <?php
 
     require("./alunos.php");
+    require("./funcao.php");
 
 ?>
 <!DOCTYPE html>
@@ -22,12 +23,24 @@
             <th>Nota</th>
             <th>Situação</th>
         </tr>
+        <?php
+            foreach($alunos as $aluno){
+        ?>
         <tr>
-            <td>Fulano</td>
-            <td>65</td>
-            <td>100</td>
-            <td>Aprovado</td>
+            <td><?= $aluno ["nome"] ?></td>
+            <td><?= $aluno ["idade"] ?></td>
+            <td><?= $aluno ["nota"] ?></td>
+            <td>
+                <?php
+                isset($alunos["situacao"]) ?
+                 $alunos["situacao"] : 
+                     "";
+                ?>
+    </td>
         </tr>
+        <?php
+            }
+        ?>
     </table>
 </section>
 </body>
