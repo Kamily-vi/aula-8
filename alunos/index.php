@@ -3,8 +3,16 @@
     require("./funcao.php");
     require("./alunos.php");
 
-    fecharNotasAlunos($alunos);
 
+    if (isset($_GET ["novaNota"])){
+        $nome = $_GET["nomeAluno"];
+        $MudarNota = $_GET["novaNota"];
+
+        MudarNota($alunos, $nome, $MudarNota);
+    }
+
+    fecharNotasAlunos($alunos);
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,6 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet"/>
+    <script src="./script.js" defer></script>
     <title>Notas dos alunos</title>
 </head>
 <body>
@@ -28,7 +37,7 @@
         <?php
             foreach($alunos as $aluno){
         ?>
-        <tr>
+        <tr onclick="showFormNota('<?= $aluno['nome'] ?>')">
             <td><?= $aluno ["nome"] ?></td>
             <td><?= $aluno ["idade"] ?></td>
             <td><?= $aluno ["nota"] ?></td>
@@ -48,5 +57,12 @@
         ?>
     </table>
 </section>
+<div class="container-form-nota">
+<form>
+    <input type="number" name="novaNota" placeholder="Digite a nova nota"/>
+    <input type="hidden" id="nomeAluno" name="nomeAluno" />
+    <button>Alterar</button>
+        </form>
+     </div>
 </body>
 </html>

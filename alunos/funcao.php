@@ -10,3 +10,14 @@ function fecharNotasAlunos( array &$alunos){
     }
 }
 
+function MudarNota(array &$turma, $nome, $MudarNota){
+ 
+    foreach($turma as $chave => $aluno) {
+        if($aluno["nome"] == $nome ){
+            $turma[$chave]["nota"] = $MudarNota;
+ 
+            return;
+        }
+    }
+}
+
