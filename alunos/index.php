@@ -32,12 +32,15 @@
             <td><?= $aluno ["nome"] ?></td>
             <td><?= $aluno ["idade"] ?></td>
             <td><?= $aluno ["nota"] ?></td>
-            <td>
-                <?php
-                isset($alunos["situação"]) ?
-                 $alunos["situação"] : 
-                     "";
-                ?>
+            <td class="
+            <?=$aluno["situação"] == "aprovado"? "aprovado" : "reprovado"  ?>
+            ">
+            <?= 
+                isset($aluno["situação"]) ?
+                    $aluno["situação"] :
+                    ""
+    
+        ?>
     </td>
         </tr>
         <?php
