@@ -1,7 +1,5 @@
 <?php
 
-
-
 $alunos = [
     [
     "nome" => "Maria",
@@ -21,7 +19,7 @@ $alunos = [
     [
     "nome" => "Isabela",
     "idade" => 17,
-    "nota" => 95
+    "nota" => 48
  
     ],
     [

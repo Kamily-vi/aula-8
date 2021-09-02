@@ -33,7 +33,7 @@
             <td><?= $aluno ["idade"] ?></td>
             <td><?= $aluno ["nota"] ?></td>
             <td class="
-            <?=$aluno["situação"] == "aprovado"? "aprovado" : "reprovado"  ?>
+            <?=$aluno["situação"] == "Aprovado"? "aprov" : "reprov"  ?>
             ">
             <?= 
                 isset($aluno["situação"]) ?
