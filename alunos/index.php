@@ -1,7 +1,9 @@
 <?php
 
-    require("./alunos.php");
     require("./funcao.php");
+    require("./alunos.php");
+
+    fecharNotasAlunos($alunos);
 
 ?>
 <!DOCTYPE html>
@@ -32,8 +34,8 @@
             <td><?= $aluno ["nota"] ?></td>
             <td>
                 <?php
-                isset($alunos["situacao"]) ?
-                 $alunos["situacao"] : 
+                isset($alunos["situação"]) ?
+                 $alunos["situação"] : 
                      "";
                 ?>
     </td>

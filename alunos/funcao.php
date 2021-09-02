@@ -1,13 +1,12 @@
 <?php
 
-function fecharNotaAlunos( array &$aluno){
+function fecharNotasAlunos( array &$alunos){
     foreach($alunos as $chave => $aluno){
-        if($aluno["nota"] >= 50){
-            $alunos[$chave]["situação"] = "aprovado";
+        if($aluno["nota"] < 50){
+            $alunos[$chave]["situação"] = "Reprovado";
         }else{
-            $alunos[$chave]["situação"] = "reprovado";
+            $alunos[$chave]["situação"] = "Aprovado";
         }
     }
 }
 
-fecharNotaAlunos($aluno);
